@@ -16,6 +16,23 @@ import * as t from '@babel/types';
 const traverse: typeof _traverse.default = ( (_traverse as any).default ?? _traverse ) as any;
 const generate: typeof _generate.default = ( (_generate as any).default ?? _generate ) as any;
 
+const normalizeBase = (base: string) => {
+  if (base === './') return './';
+  let out = base.trim();
+  if (!out.startsWith('/')) out = `/${out}`;
+  if (!out.endsWith('/')) out += '/';
+  return out;
+};
+
+const resolveBase = (mode: string) => {
+  if (mode !== 'production') return '/';
+  const explicit = process.env.VITE_BASE_PATH;
+  if (explicit && explicit.length > 0) return normalizeBase(explicit);
+  const repo = process.env.GITHUB_REPOSITORY?.split('/')[1];
+  if (repo) return normalizeBase(repo);
+  return '/';
+};
+
 function cdnPrefixImages(): Plugin {
   const DEBUG = process.env.CDN_IMG_DEBUG === '1';
   let publicDir = '';              // absolute path to Vite public dir
@@ -206,7 +223,9 @@ function cdnPrefixImages(): Plugin {
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
+  const base = resolveBase(mode);
   return {
+    base,
     server: {
       host: "::",
       port: 8080,

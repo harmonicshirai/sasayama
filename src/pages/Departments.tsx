@@ -25,7 +25,7 @@ const Departments = () => {
   ];
 
   const sasayamaDepartments = [
-    { name: '内科・総合診療科', description: '一般内科診療から専門的な診療まで、幅広く対応します。' },
+    { name: '内科', description: '一般内科診療から専門的な診療まで、幅広く対応します。' },
     { name: '循環器内科', description: '心臓・血管系疾患の専門的な診断と治療を提供します。' },
     { name: '消化器内科', description: '胃腸、肝臓、胆嚢、膵臓などの消化器疾患の診療を行います。' },
     { name: '呼吸器内科', description: '肺炎、喘息、COPDなどの呼吸器疾患の専門的な診療を行います。' },

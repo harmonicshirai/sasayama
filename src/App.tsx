@@ -8,6 +8,8 @@ import Nishiki from "./pages/Nishiki";
 import Sasayama from "./pages/Sasayama";
 import Departments from "./pages/Departments";
 import Access from "./pages/Access";
+import FirstVisit from "./pages/FirstVisit";
+import Appointment from "./pages/Appointment";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/sasayama" element={<Sasayama />} />
           <Route path="/departments" element={<Departments />} />
           <Route path="/access" element={<Access />} />
+          <Route path="/first-visit" element={<FirstVisit />} />
+          <Route path="/appointment" element={<Appointment />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

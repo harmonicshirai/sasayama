@@ -1,10 +1,44 @@
 import { useState } from 'react';
-import { Link } from '@/lib/react-router-dom-proxy';
+import { Link, useLocation } from '@/lib/react-router-dom-proxy';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone, Clock } from 'lucide-react';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // 現在のページに応じて病院名を変更
+  const getHospitalName = () => {
+    if (location.pathname === '/nishiki') {
+      return 'にしき記念病院';
+    } else if (location.pathname === '/sasayama') {
+      return 'ささやま医療センター';
+    }
+    return '丹波篠山統合医療センター';
+  };
+
+  const getHospitalNameEn = () => {
+    if (location.pathname === '/nishiki') {
+      return 'Nishiki Memorial Hospital';
+    } else if (location.pathname === '/sasayama') {
+      return 'Sasayama Medical Center';
+    }
+    return 'Tamba Sasayama Integrated Medical Center';
+  };
+
+  const getPhoneNumber = () => {
+    if (location.pathname === '/nishiki') {
+      return '079-593-1352';
+    }
+    return '079-552-1181';
+  };
+
+  const getReceptionTime = () => {
+    if (location.pathname === '/nishiki') {
+      return '9:00〜19:00';
+    }
+    return '8:30〜11:30';
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
@@ -15,11 +49,11 @@ export const Header = () => {
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>お問い合わせ: 079-552-1181</span>
+                <span>お問い合わせ: {getPhoneNumber()}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
-                <span>受付時間: 8:30〜11:30</span>
+                <span>受付時間: {getReceptionTime()}</span>
               </div>
             </div>
           </div>
@@ -35,9 +69,9 @@ export const Header = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold text-[hsl(var(--primary))]">
-                丹波篠山統合医療センター
+                {getHospitalName()}
               </h1>
-              <p className="text-xs text-muted-foreground">Tamba Sasayama Integrated Medical Center</p>
+              <p className="text-xs text-muted-foreground">{getHospitalNameEn()}</p>
             </div>
           </Link>
 

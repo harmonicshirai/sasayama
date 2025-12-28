@@ -29,7 +29,7 @@ const Index = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `linear-gradient(135deg, hsl(210 80% 45% / 0.3), hsl(150 50% 50% / 0.3)), url('https://images.unsplash.com/photo-1764885517847-79d62138cc58?w=1920&auto=format&fit=crop&q=80')`,
+            backgroundImage: `linear-gradient(135deg, hsl(210 80% 45% / 0.9), hsl(150 50% 50% / 0.85)), url('https://images.unsplash.com/photo-1764885517847-79d62138cc58?w=1920&auto=format&fit=crop&q=80')`,
           }}
         />
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
@@ -44,31 +44,27 @@ const Index = () => {
             必要な医療へ最短でご案内します。
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            <Link to="/first-visit">
-              <Button size="lg" className="bg-white text-black hover:bg-white/90 text-lg px-6 py-8 rounded-xl h-auto w-full">
-                <div className="flex flex-col items-center">
-                  <Calendar className="w-8 h-8 mb-2 text-[hsl(var(--primary))]" />
-                  <span className="font-bold">初めての方へ</span>
-                </div>
-              </Button>
-            </Link>
-            <Link to="/appointment">
-              <Button size="lg" className="bg-white text-black hover:bg-white/90 text-lg px-6 py-8 rounded-xl h-auto w-full">
-                <div className="flex flex-col items-center">
-                  <Clock className="w-8 h-8 mb-2 text-[hsl(var(--primary))]" />
-                  <span className="font-bold">外来受付・予約</span>
-                </div>
-              </Button>
-            </Link>
-            <Button size="lg" className="bg-white text-black hover:bg-white/90 text-lg px-6 py-8 rounded-xl h-auto">
+            <Button size="lg" className="bg-white text-[hsl(var(--primary))] hover:bg-white/90 text-lg px-6 py-8 rounded-xl h-auto">
               <div className="flex flex-col items-center">
-                <Ambulance className="w-8 h-8 mb-2 text-red-600" />
+                <Calendar className="w-8 h-8 mb-2" />
+                <span className="font-bold">初めての方へ</span>
+              </div>
+            </Button>
+            <Button size="lg" className="bg-white text-[hsl(var(--primary))] hover:bg-white/90 text-lg px-6 py-8 rounded-xl h-auto">
+              <div className="flex flex-col items-center">
+                <Clock className="w-8 h-8 mb-2" />
+                <span className="font-bold">外来受付・予約</span>
+              </div>
+            </Button>
+            <Button size="lg" className="bg-white text-[hsl(var(--primary))] hover:bg-white/90 text-lg px-6 py-8 rounded-xl h-auto">
+              <div className="flex flex-col items-center">
+                <Ambulance className="w-8 h-8 mb-2" />
                 <span className="font-bold">救急・時間外</span>
               </div>
             </Button>
-            <Button size="lg" className="bg-white text-black hover:bg-white/90 text-lg px-6 py-8 rounded-xl h-auto">
+            <Button size="lg" className="bg-white text-[hsl(var(--primary))] hover:bg-white/90 text-lg px-6 py-8 rounded-xl h-auto">
               <div className="flex flex-col items-center">
-                <Phone className="w-8 h-8 mb-2 text-[hsl(var(--primary))]" />
+                <Phone className="w-8 h-8 mb-2" />
                 <span className="font-bold">お電話はこちら</span>
               </div>
             </Button>
@@ -80,106 +76,106 @@ const Index = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] mb-8 text-center">
               重要なお知らせ
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card className="border-l-4 border-[hsl(var(--primary))] shadow-lg">
                 <CardHeader>
-                  <CardTitle className="text-xl text-black flex items-center gap-2">
-                    <Calendar className="w-6 h-6 text-[hsl(var(--primary))]" />
+                  <CardTitle className="text-xl text-[hsl(var(--primary))] flex items-center gap-2">
+                    <Calendar className="w-6 h-6" />
                     本日・直近のご案内
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 text-base leading-relaxed">
                   <div className="p-3 bg-blue-50 rounded-lg">
-                    <p className="font-semibold text-black mb-1">本日の診療</p>
-                    <p className="text-gray-700">通常通り診療しております</p>
+                    <p className="font-semibold text-[hsl(var(--primary))] mb-1">本日の診療</p>
+                    <p className="text-muted-foreground">通常通り診療しております</p>
                   </div>
                   <div className="p-3 bg-amber-50 rounded-lg">
                     <p className="font-semibold text-amber-700 mb-1">面会について</p>
-                    <p className="text-gray-700">感染症予防のため、少人数・短時間でお願いします</p>
+                    <p className="text-muted-foreground">感染症予防のため、少人数・短時間でお願いします</p>
                   </div>
                 </CardContent>
               </Card>
 
               <Card className="border-l-4 border-red-500 shadow-lg">
                 <CardHeader>
-                  <CardTitle className="text-xl text-black flex items-center gap-2">
-                    <Ambulance className="w-6 h-6 text-red-600" />
+                  <CardTitle className="text-xl text-red-600 flex items-center gap-2">
+                    <Ambulance className="w-6 h-6" />
                     救急受入状況
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 text-base leading-relaxed">
                   <div className="p-3 bg-red-50 rounded-lg">
                     <p className="font-semibold text-red-700 mb-1">救急外来・時間外受診</p>
-                    <p className="text-gray-700">来院前に必ずお電話でご確認ください</p>
+                    <p className="text-muted-foreground">来院前に必ずお電話でご確認ください</p>
                   </div>
                   <div className="p-3 bg-blue-50 rounded-lg">
-                    <p className="font-semibold text-black mb-1">救急車での来院</p>
-                    <p className="text-gray-700">24時間対応しております</p>
+                    <p className="font-semibold text-[hsl(var(--primary))] mb-1">救急車での来院</p>
+                    <p className="text-muted-foreground">24時間対応しております</p>
                   </div>
                 </CardContent>
               </Card>
 
               <Card className="border-l-4 border-[hsl(var(--accent))] shadow-lg md:col-span-2">
                 <CardHeader>
-                  <CardTitle className="text-xl text-black flex items-center gap-2">
-                    <Shield className="w-6 h-6 text-[hsl(var(--primary))]" />
+                  <CardTitle className="text-xl text-[hsl(var(--primary))] flex items-center gap-2">
+                    <Shield className="w-6 h-6" />
                     経営統合のお知らせ
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="text-base leading-relaxed text-gray-700">
+                <CardContent className="text-base leading-relaxed">
                   <p className="mb-3">
                     この度、医療法人社団みどり会 にしき記念病院と兵庫医科大学ささやま医療センターは、2025年に経営統合することとなりました。
                   </p>
                   <p>
                     両病院の強みを活かし、外来から救急、入院、在宅まで、地域の皆様の「困った」を切れ目なく支える病院として、より充実した医療サービスを提供してまいります。
                   </p>
-                </CardContent>
-              </Card>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
+      </div>
       </section>
 
-      {/* 目的別ナビ */}
+      {/* 目的別ナビ */
       <section className="py-16 bg-gradient-to-br from-blue-50 to-green-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] mb-8 text-center">
               受診のしかた
             </h2>
-            <p className="text-center text-xl text-gray-700 mb-10 leading-relaxed">
+            <p className="text-center text-xl text-muted-foreground mb-10 leading-relaxed">
               初診の方も、紹介状をお持ちの方も、迷わない導線でご案内します。
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Link to="/first-visit">
+              <Link to="/nishiki">
                 <Card className="hover:shadow-2xl transition-all hover:-translate-y-1 h-full cursor-pointer">
                   <CardHeader>
                     <div className="w-16 h-16 bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--primary-light))] rounded-2xl flex items-center justify-center mb-4">
                       <Users className="w-8 h-8 text-white" />
                     </div>
-                    <CardTitle className="text-2xl text-black">初めての方へ</CardTitle>
+                    <CardTitle className="text-2xl">初めての方へ</CardTitle>
                   </CardHeader>
                   <CardContent className="text-base leading-relaxed">
-                    <p className="text-gray-700">
+                    <p className="text-muted-foreground">
                       初診の流れ、必要なもの、受付時間などをわかりやすくご案内します。
                     </p>
                   </CardContent>
                 </Card>
               </Link>
 
-              <Link to="/appointment">
+              <Link to="/departments">
                 <Card className="hover:shadow-2xl transition-all hover:-translate-y-1 h-full cursor-pointer">
                   <CardHeader>
                     <div className="w-16 h-16 bg-gradient-to-br from-[hsl(var(--accent))] to-[hsl(var(--secondary-light))] rounded-2xl flex items-center justify-center mb-4">
                       <Stethoscope className="w-8 h-8 text-white" />
                     </div>
-                    <CardTitle className="text-2xl text-black">外来受付・予約</CardTitle>
+                    <CardTitle className="text-2xl">外来受付・予約</CardTitle>
                   </CardHeader>
                   <CardContent className="text-base leading-relaxed">
-                    <p className="text-gray-700">
+                    <p className="text-muted-foreground">
                       各診療科の受付時間、予約方法、担当医の情報をご確認いただけます。
                     </p>
                   </CardContent>
@@ -191,10 +187,10 @@ const Index = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mb-4">
                     <Ambulance className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-2xl text-black">救急・時間外</CardTitle>
+                  <CardTitle className="text-2xl text-red-600">救急・時間外</CardTitle>
                 </CardHeader>
                 <CardContent className="text-base leading-relaxed">
-                  <p className="text-gray-700">
+                  <p className="text-muted-foreground">
                     急な体調不良や時間外の受診について、来院前にご確認ください。
                   </p>
                 </CardContent>
@@ -205,10 +201,10 @@ const Index = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--accent))] rounded-2xl flex items-center justify-center mb-4">
                     <Building2 className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-2xl text-black">入院・面会</CardTitle>
+                  <CardTitle className="text-2xl">入院・面会</CardTitle>
                 </CardHeader>
                 <CardContent className="text-base leading-relaxed">
-                  <p className="text-gray-700">
+                  <p className="text-muted-foreground">
                     入院の手続き、持ち物、面会時間など、入院に関する情報をご案内します。
                   </p>
                 </CardContent>
@@ -219,10 +215,10 @@ const Index = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[hsl(var(--accent))] to-[hsl(var(--primary))] rounded-2xl flex items-center justify-center mb-4">
                     <Activity className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-2xl text-black">健診・人間ドック</CardTitle>
+                  <CardTitle className="text-2xl">健診・人間ドック</CardTitle>
                 </CardHeader>
                 <CardContent className="text-base leading-relaxed">
-                  <p className="text-gray-700">
+                  <p className="text-muted-foreground">
                     各種健康診断、人間ドックのご予約・お問い合わせはこちらから。
                   </p>
                 </CardContent>
@@ -233,10 +229,10 @@ const Index = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-4">
                     <Heart className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-2xl text-black">在宅・地域連携</CardTitle>
+                  <CardTitle className="text-2xl">在宅・地域連携</CardTitle>
                 </CardHeader>
                 <CardContent className="text-base leading-relaxed">
-                  <p className="text-gray-700">
+                  <p className="text-muted-foreground">
                     在宅医療、訪問看護、介護・福祉との連携についてご相談ください。
                   </p>
                 </CardContent>
@@ -246,14 +242,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 統合病院の特徴 */}
+      {/* 統合病院の特徴 */
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-black mb-4">
+            <h2 className="text-4xl font-bold text-[hsl(var(--primary))] mb-4">
               統合医療センターの特徴
             </h2>
-            <p className="text-xl text-gray-700">
+            <p className="text-xl text-muted-foreground">
               2つの病院が1つになり、さらに充実した医療を
             </p>
           </div>
@@ -264,10 +260,10 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--primary-light))] rounded-full flex items-center justify-center mb-4">
                   <Heart className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl text-black">充実した診療科目</CardTitle>
+                <CardTitle className="text-xl">充実した診療科目</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700">
+                <p className="text-muted-foreground">
                   内科、外科、整形外科など、幅広い診療科目で地域医療をサポート
                 </p>
               </CardContent>
@@ -278,10 +274,10 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-[hsl(var(--accent))] to-[hsl(var(--secondary-light))] rounded-full flex items-center justify-center mb-4">
                   <Users className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl text-black">経験豊富な医療スタッフ</CardTitle>
+                <CardTitle className="text-xl">経験豊富な医療スタッフ</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700">
+                <p className="text-muted-foreground">
                   両病院の優秀な医師・看護師が連携し、質の高い医療を提供
                 </p>
               </CardContent>
@@ -292,10 +288,10 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--accent))] rounded-full flex items-center justify-center mb-4">
                   <Activity className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl text-black">最新医療機器</CardTitle>
+                <CardTitle className="text-xl">最新医療機器</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700">
+                <p className="text-muted-foreground">
                   最新の医療機器を導入し、正確な診断と治療を実現
                 </p>
               </CardContent>
@@ -306,10 +302,10 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-[hsl(var(--accent))] to-[hsl(var(--primary))] rounded-full flex items-center justify-center mb-4">
                   <Ambulance className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl text-black">24時間救急対応</CardTitle>
+                <CardTitle className="text-xl">24時間救急対応</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700">
+                <p className="text-muted-foreground">
                   にしき記念病院では年中無休で内科診療を実施
                 </p>
               </CardContent>
@@ -322,7 +318,7 @@ const Index = () => {
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-black mb-4">
+            <h2 className="text-4xl font-bold text-[hsl(var(--primary))] mb-4">
               統合病院のご紹介
             </h2>
           </div>
@@ -334,27 +330,27 @@ const Index = () => {
                 backgroundImage: `url('https://images.unsplash.com/photo-1758691462370-cef1774278cd?w=800&auto=format&fit=crop&q=80')`
               }} />
               <CardHeader>
-                <CardTitle className="text-2xl text-black">
+                <CardTitle className="text-2xl text-[hsl(var(--primary))]">
                   にしき記念病院
                 </CardTitle>
-                <CardDescription className="text-base text-gray-700">
+                <CardDescription className="text-base">
                   医療法人社団 みどり会
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-2">
                   <MapPin className="w-5 h-5 text-[hsl(var(--primary))] mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">兵庫県丹波篠山市西谷575-1</span>
+                  <span>兵庫県丹波篠山市西谷575-1</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <Phone className="w-5 h-5 text-[hsl(var(--primary))] mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">079-593-1352</span>
+                  <span>079-593-1352</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <Clock className="w-5 h-5 text-[hsl(var(--primary))] mt-1 flex-shrink-0" />
                   <div>
-                    <p className="text-gray-700">平日: 9:00〜12:00 / 17:00〜19:00</p>
-                    <p className="text-gray-700">土日祝: 9:00〜12:00 / 14:00〜17:00</p>
+                    <p>平日: 9:00〜12:00 / 17:00〜19:00</p>
+                    <p>土日祝: 9:00〜12:00 / 14:00〜17:00</p>
                   </div>
                 </div>
                 <div className="pt-4">
@@ -373,27 +369,27 @@ const Index = () => {
                 backgroundImage: `url('https://images.unsplash.com/photo-1654762930571-dcf2ebc11542?w=800&auto=format&fit=crop&q=80')`
               }} />
               <CardHeader>
-                <CardTitle className="text-2xl text-black">
+                <CardTitle className="text-2xl text-[hsl(var(--primary))]">
                   ささやま医療センター
                 </CardTitle>
-                <CardDescription className="text-base text-gray-700">
+                <CardDescription className="text-base">
                   兵庫医科大学
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-2">
                   <MapPin className="w-5 h-5 text-[hsl(var(--primary))] mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">兵庫県丹波篠山市黒岡5</span>
+                  <span>兵庫県丹波篠山市黒岡5</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <Phone className="w-5 h-5 text-[hsl(var(--primary))] mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">079-552-1181</span>
+                  <span>079-552-1181</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <Clock className="w-5 h-5 text-[hsl(var(--primary))] mt-1 flex-shrink-0" />
                   <div>
-                    <p className="text-gray-700">受付時間: 8:30〜11:30</p>
-                    <p className="text-gray-700">休診日: 土日祝・年末年始</p>
+                    <p>受付時間: 8:30〜11:30</p>
+                    <p>休診日: 土日祝・年末年始</p>
                   </div>
                 </div>
                 <div className="pt-4">
@@ -413,10 +409,10 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-black mb-4">
+            <h2 className="text-4xl font-bold text-[hsl(var(--primary))] mb-4">
               安心の医療体制
             </h2>
-            <p className="text-xl text-gray-700">
+            <p className="text-xl text-muted-foreground">
               経験豊富な医療スタッフと最新設備で、質の高い医療を提供
             </p>
           </div>
@@ -424,8 +420,8 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="relative overflow-hidden rounded-lg shadow-lg group">
               <img 
-                src="./images/japanese_medical_team_20251228_020327.png" 
-                alt="医療スタッフ"
+                src="https://images.unsplash.com/photo-1592392821486-71f028a00581?w=600&auto=format&fit=crop&q=80" 
+                alt="医療スタッフ" 
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
@@ -438,8 +434,8 @@ const Index = () => {
 
             <div className="relative overflow-hidden rounded-lg shadow-lg group">
               <img 
-                src="./images/japanese_patient_care_20251228_020327.png" 
-                alt="患者ケア"
+                src="https://images.unsplash.com/photo-1581090124355-6c1376cf3047?w=600&auto=format&fit=crop&q=80" 
+                alt="患者ケア" 
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
@@ -452,8 +448,8 @@ const Index = () => {
 
             <div className="relative overflow-hidden rounded-lg shadow-lg group">
               <img 
-                src="./images/japanese_rehabilitation_20251228_020327.png" 
-                alt="リハビリテーション"
+                src="https://images.unsplash.com/photo-1545463913-5083aa7359a6?w=600&auto=format&fit=crop&q=80" 
+                alt="リハビリテーション" 
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
@@ -471,10 +467,10 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-black mb-4">
+            <h2 className="text-4xl font-bold text-[hsl(var(--primary))] mb-4">
               主な診療科目
             </h2>
-            <p className="text-xl text-gray-700">
+            <p className="text-xl text-muted-foreground">
               幅広い診療科目で地域の健康をサポート
             </p>
           </div>
@@ -489,7 +485,7 @@ const Index = () => {
               <Card key={dept} className="text-center hover:shadow-lg transition-shadow cursor-pointer">
                 <CardContent className="pt-6 pb-6">
                   <Stethoscope className="w-8 h-8 mx-auto mb-2 text-[hsl(var(--primary))]" />
-                  <p className="font-medium text-black">{dept}</p>
+                  <p className="font-medium">{dept}</p>
                 </CardContent>
               </Card>
             ))}
